@@ -1,0 +1,124 @@
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1595376281.222647,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-dhgautam-my-golang-master-9bzt9-hsv77[0m
+{"level":"info","ts":1595376290.242964,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/********/my-golang.git @ v0.0.4 in path /workspace/source"}
+{"level":"warn","ts":1595376290.2431483,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1595376290.286366,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/my-golang main.go
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0722 00:05:01.715846      11 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0000] Resolved base name golang:alpine to build-env 
+[36mINFO[0m[0000] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0000] Retrieving image manifest golang:alpine      
+E0722 00:05:01.993930      11 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0722 00:05:01.997056      11 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0005] Retrieving image manifest golang:alpine      
+[36mINFO[0m[0007] Retrieving image manifest alpine             
+[36mINFO[0m[0008] Retrieving image manifest alpine             
+[36mINFO[0m[0009] Built cross stage deps: map[0:[/go/src/my-golang/my-golang]] 
+[36mINFO[0m[0009] Retrieving image manifest golang:alpine      
+[36mINFO[0m[0009] Retrieving image manifest golang:alpine      
+[36mINFO[0m[0011] Executing 0 build triggers                   
+[36mINFO[0m[0011] Checking for cached layer gcr.io/valued-ceiling-253018/cache:09e40fa24e541dbdca89ff781312c0c0671ca8e03c3c9be0a7d5d94db7aed9a0... 
+[36mINFO[0m[0011] No cached layer found for cmd COPY . /go/src/my-golang 
+[36mINFO[0m[0011] Unpacking rootfs as cmd COPY . /go/src/my-golang requires it. 
+[36mINFO[0m[0022] WORKDIR /go/src                              
+[36mINFO[0m[0022] cmd: workdir                                 
+[36mINFO[0m[0022] Changed working directory to /go/src         
+[36mINFO[0m[0022] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0022] COPY . /go/src/my-golang                     
+[36mINFO[0m[0022] Resolving 130 paths                          
+[36mINFO[0m[0022] Taking snapshot of files...                  
+[36mINFO[0m[0023] RUN cd /go/src/my-golang && go build .       
+[36mINFO[0m[0023] Taking snapshot of full filesystem...        
+[36mINFO[0m[0023] Pushing layer gcr.io/valued-ceiling-253018/cache:09e40fa24e541dbdca89ff781312c0c0671ca8e03c3c9be0a7d5d94db7aed9a0 to cache now 
+[36mINFO[0m[0026] Resolving 11724 paths                        
+[36mINFO[0m[0028] cmd: /bin/sh                                 
+[36mINFO[0m[0028] args: [-c cd /go/src/my-golang && go build .] 
+[36mINFO[0m[0028] Running: [/bin/sh -c cd /go/src/my-golang && go build .] 
+[36mINFO[0m[0029] Taking snapshot of full filesystem...        
+[36mINFO[0m[0029] Resolving 11731 paths                        
+[36mINFO[0m[0031] Pushing layer gcr.io/valued-ceiling-253018/cache:c8ceb2ce97bd78be49e965a9c4f050d95b16cd3b0f3e7e3a2a1cb5eafa3c769b to cache now 
+[36mINFO[0m[0034] Saving file go/src/my-golang/my-golang for later use 
+[36mINFO[0m[0034] Deleting filesystem...                       
+[36mINFO[0m[0034] Retrieving image manifest alpine             
+[36mINFO[0m[0035] Retrieving image manifest alpine             
+[36mINFO[0m[0036] Executing 0 build triggers                   
+[36mINFO[0m[0036] Checking for cached layer gcr.io/valued-ceiling-253018/cache:a28f2a71a4a159437106de4999a1efa4d283c1f79f03d1a24db16b55d78f2849... 
+[36mINFO[0m[0036] Using caching version of cmd: RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk* 
+[36mINFO[0m[0036] Checking for cached layer gcr.io/valued-ceiling-253018/cache:998af78229f8ca4b01aef933cc8e1d76d6062757d0777a5294df05c91752e1c5... 
+[36mINFO[0m[0036] No cached layer found for cmd COPY --from=build-env /go/src/my-golang/my-golang /app 
+[36mINFO[0m[0036] cmd: EXPOSE                                  
+[36mINFO[0m[0036] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0036] Unpacking rootfs as cmd COPY --from=build-env /go/src/my-golang/my-golang /app requires it. 
+[36mINFO[0m[0037] RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk* 
+[36mINFO[0m[0037] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0037] WORKDIR /app                                 
+[36mINFO[0m[0037] cmd: workdir                                 
+[36mINFO[0m[0037] Changed working directory to /app            
+[36mINFO[0m[0037] Creating directory /app                      
+[36mINFO[0m[0037] Resolving 1 paths                            
+[36mINFO[0m[0037] Taking snapshot of files...                  
+[36mINFO[0m[0037] COPY --from=build-env /go/src/my-golang/my-golang /app 
+[36mINFO[0m[0037] Resolving 1 paths                            
+[36mINFO[0m[0037] Taking snapshot of files...                  
+[36mINFO[0m[0037] Pushing layer gcr.io/valued-ceiling-253018/cache:998af78229f8ca4b01aef933cc8e1d76d6062757d0777a5294df05c91752e1c5 to cache now 
+[36mINFO[0m[0037] EXPOSE 8080                                  
+[36mINFO[0m[0037] cmd: EXPOSE                                  
+[36mINFO[0m[0037] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0037] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0037] ENTRYPOINT [ "./my-golang" ]                 
+[36mINFO[0m[0037] No files changed in this command, skipping snapshotting. 
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/my-golang to an unshallow repository
+Generating change log from git ref 9a892551b53705b65e116fd0e664e5d606dca49b => 07d8a126c29ef4d272f68e19510d334021461531
+WARNING: No release found for ********/my-golang and tag v0.0.4 so creating a new release
+Updated the release information at https://github.com/********/my-golang/releases/tag/v0.0.4
+generated: /workspace/source/charts/my-golang/templates/release.yaml
+Created Release my-golang-0-0-4 resource in namespace **
+Updating PipelineActivity ********-my-golang-master-2 with version 0.0.4
+Updated PipelineActivities ********-my-golang-master-2 with release notes URL: https://github.com/********/my-golang/releases/tag/v0.0.4
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file my-golang-0.0.4.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mdhgautam-my-golang-master-9bzt9-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app my-golang version 0.0.4 to namespace **-staging
+Created Pull Request: https://github.com/********/environment-**boot-staging/pull/5
+Added label updatebot to Pull Request https://github.com/********/environment-**boot-staging/pull/5
+got git provider status pending from PR https://github.com/********/environment-**boot-staging/pull/5
+Pull Request https://github.com/********/environment-**boot-staging/pull/5 is merged at sha 025639b3b27c7eea981aad3fbc9cb5bea38f64d8
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names my-golang, **-my-golang, **-staging-my-golang
